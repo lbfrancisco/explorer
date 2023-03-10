@@ -1,0 +1,143 @@
+:root {
+  --blue: #89C5CC;
+  --gray: #7D7987;
+  --green: #69B99D;
+  --dark-blue: #1F1534;
+}
+
+/* RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body * {
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  background: linear-gradient(180deg, rgba(227, 255, 248, 0) 82.08%, rgba(227, 255, 248, 0.38) 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 65px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  list-style: none;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+} 
+
+ul li a {
+  text-decoration: none;
+  color: var(--gray);
+  opacity: 0.7;
+  transition: all .2s;
+}
+
+ul li a:hover {
+  font-weight: bold;
+  color: var(--dark-blue);
+  opacity: 1;
+}
+
+/* MAIN */
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  margin-top: 58px;
+}
+
+main h1 {
+  font-size: 3rem;
+  font-weight: normal;
+  color: var(--dark-blue);
+}
+
+main h1 span {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+main p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+  line-height: 28px;
+  color: var(--gray);
+}
+
+main .left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 489px;
+}
+
+main button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  color: white;
+  background-color: var(--green);
+  
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 14px 32px;
+  max-width: fit-content;
+}
+
+main button:hover {
+  filter: brightness(1.1);
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  margin-top: 82px;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.875rem;
+  color: var(--dark-blue);
+}
+
+footer p a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--dark-blue);
+  transition: color .2s;
+}
+
+footer p a:hover {
+  color: var(--green);
+}
+
+#balls {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  opacity: 0.5;
+}

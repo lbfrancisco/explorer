@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-size: 62.5%;
+}
+
+body { 
+  background: linear-gradient(287.56deg, #C2E9FB 0%, #A1C4FD 100%);
+}
+
+body * {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.6rem;
+}
+
+#container > div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4.8rem;
+
+  padding: 4.8rem 6.4rem 6.4rem;
+
+  max-width: 42.8rem;
+  margin: 20rem auto;
+  text-align: center;
+
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: .6rem;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: #34355B;
+  font-size: 2.4rem;
+  line-height: 29px;
+  margin-bottom: 1.6rem;
+}
+
+h2, p {
+  color: rgba(52, 53, 91, 0.8);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+
+form {
+  display: flex;
+}
+
+input, button {
+  border: 0;
+  outline: 0;
+  padding: 1.6rem;
+  color: #fff;
+}
+
+input {
+  color: #34355B;
+  background-color: #DCE2E9;
+  max-width: 6.4rem;
+  text-align: center;
+  border-radius: .6rem 0 0 .6rem;
+}
+
+button {
+  background-color: #7879F1;
+  border-radius: 0 .6rem .6rem 0;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #6060ca;
+}
+
+/* GAMEOVER */
+#container .gameover button {
+  border-radius: .6rem;
+}
+
+#container .hide {
+  display: none;
+}

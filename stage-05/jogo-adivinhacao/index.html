@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stage 5 - Jogo da Adivinhação</title>  
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="container">
+    <div class="playing">
+      <div class="heading">
+        <h1>Jogo da Adivinhação</h1>
+        <p>Adivinhe o número entre 0 e 10</p>
+      </div>
+  
+      <form action="">
+        <input id="input-number" type="number" maxlength="2" min="0" max="10">
+        <button id="try-button">Tentar</button>
+      </form>
+    </div>
+    <div class="gameover hide">
+      <h2>Você acertou em x tentativas!</h2>
+      <button id="reset-button">Jogar novamente</button>
+    </div>
+  </main>
+  <script src="main.js"></script>
+</body>
+</html>

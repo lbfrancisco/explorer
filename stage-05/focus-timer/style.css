@@ -1,0 +1,80 @@
+:root {  
+  --hsl: 194;
+  
+  --bg-color: #121214;
+  --primary-color: hsla(var(--hsl), 100%, 63%, 1);
+  --secondary-color: hsla(var(--hsl), 100%, 63%, 0.13);
+  --text-color: #fff;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 8.8rem;
+  color: var(--text-color);
+
+  display: grid;
+  height: 100vh;
+
+  background-color: var(--bg-color);
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  align-self: end;
+  justify-self: center;
+}
+
+button {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+#timer {
+  display: flex;
+  margin-bottom: 1.6rem;
+  font-size: clamp(2.4rem, 3.2rem + 30vw, 8.8rem);
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+
+  width: clamp(12rem, 18rem + 24vw, 24rem);
+  height: clamp(5.5rem, 7.5rem + 12vw, 11.1rem);
+  
+  background-color: var(--secondary-color);
+  border-radius: 9999px;
+  padding: 2.2rem 4rem;
+}
+
+.play svg path,
+.pause svg path,
+.sound-on svg path {
+  fill: var(--primary-color);
+}
+
+button svg {
+  width: clamp(3.2rem, 2.4rem + 24vw, 6.4rem);
+}
+
+footer {
+  align-self: end;
+  justify-self: end;
+
+  padding: 0 3rem 1rem 0;
+}

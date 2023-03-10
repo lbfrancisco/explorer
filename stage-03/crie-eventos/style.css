@@ -1,0 +1,230 @@
+:root {
+  --blue-500: #42D3FF;
+  
+  --gray-100: #FAFAFC;
+  --gray-200: #D6D6D6;
+  --gray-300: #D9D9D9;
+  --gray-400: #4E4958;
+  --gray-700: #32264D;
+  --gray-900: #121214;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--gray-300);
+}
+
+body * {
+  font-family: 'Poppins', sans-serif;
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: var(--gray-900);
+  width: 100%;
+  height: 368px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.page {
+  max-width: 736px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+header {
+  margin-top: 80px;
+}
+
+header h1 {
+  color: white;
+  font-family: 'Archivo', 'Poppins', sans-serif;
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 117%;
+  margin-bottom: 24px;
+  width: 419px;
+}
+
+header p {
+  color: var(--blue-500);
+  line-height: 162%;
+  width: 319px;
+}
+
+/* FORM */
+form {
+  background-color: var(--gray-100);
+  padding: 64px;
+  margin-top: 42px;
+  border-radius: 8px 8px 0 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+form fieldset {
+  border: none;
+}
+
+form legend {
+  font-family: 'Archivo', 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  
+  width: 100%;
+
+  color: var(--gray-700);
+  
+  border-bottom: 1px solid #E6E6F0;
+  padding-bottom: 16px;
+}
+
+.fieldset-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-wrapper input, .input-wrapper textarea, .input-wrapper select {
+  padding-inline: 1.5rem;
+  height: 56px;
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+  outline-color: var(--gray-900);
+  color: var(--gray-900);
+}
+
+.input-wrapper label {
+  font-size: 0.875rem;
+  color: var(--gray-400);
+}
+
+.input-wrapper label span {
+  font-size: 0.75rem;
+  color: #C1C1C1;
+}
+
+.input-wrapper label span:hover {
+  color: #727272;
+}
+
+/* FORM - TEXTAREA */
+.input-wrapper textarea {
+  resize: vertical;
+  height: 168px;
+  padding: 16px 24px;
+}
+
+/* FORM - SELECT FIELD */
+.input-wrapper select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1_54)'%3E%3Cpath d='M8 10L12 14L16 10' stroke='%239C98A6' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1_54'%3E%3Crect width='24' height='24' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+/* FORM - EVENT PRIVACY */
+.checkbox-wrapper {
+  flex-direction: row;
+  align-items: center;
+
+  position: relative;
+}
+
+.checkbox-wrapper input {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-wrapper input:focus + label::before {
+  outline: 2px solid black;
+}
+
+.checkbox-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.checkbox-wrapper label::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  display: block;
+
+  border: 1px solid #E6E6F0;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 11.17L1.83 7L0.410004 8.41L6 14L18 2L16.59 0.589996L6 11.17Z' fill='%2342D3FF'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* FORM - DATE FIELD */
+#date-field .fieldset-wrapper .wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#date-field .input-wrapper:nth-child(1) {
+  flex: 1;
+}
+
+/* BUTTON - CONTAINER */
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background-color: #F0F0F4;
+  height: 136px;
+
+  border-radius: 0 0 8px 8px; 
+  margin-bottom: 91px;
+}
+
+.button-container button {
+  width: 608px;
+  height: 56px;
+
+  font-family: 'Archivo', 'Poppins', sans-serif;
+
+  background-color: #04D361;
+  color: white;
+
+  padding: 15px 40px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+.button-container button:hover {
+  background-color: #1ab05e;
+}
+
+/* FORM - INVALID */
+input:invalid {
+  border: 1px solid #FF1010;
+}

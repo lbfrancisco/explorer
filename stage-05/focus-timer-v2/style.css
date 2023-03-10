@@ -1,0 +1,167 @@
+:root {
+  --light-background: #FFFFFF;
+  --light-primary-color: #323238;
+  --light-secondary-color: #E1E1E6;
+  --light-highlight-color: #02799D;
+
+  --dark-background: #121214;
+  --dark-primary-color: #FFFFFF;
+  --dark-secondary-color: #C4C4CC;
+  --dark-highlight-color: #0A3442;
+
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12.8rem;
+
+  font-family: 'Roboto', sans-serif;
+
+  height: 100vh;
+}
+
+#countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+#countdown .timer {
+  display: flex;
+  font-size: clamp(1.8rem, 9rem + 50vw, 12.6rem);
+}
+
+#countdown button {
+  background: transparent;
+  padding: 0;
+}
+
+#countdown .controls {
+  display: flex;
+  gap: 4rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: clamp(1.4rem, 2.4rem, 3.2rem)
+}
+
+button {
+  border: 0;
+  border-radius: 2.4rem;
+  padding: clamp(2.4rem, 3.2rem + 24vw, 4.8rem);
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    gap: 6.4rem;
+
+    margin: 3.2rem;
+  }
+
+  #countdown .timer {
+    font-size: 12.8rem;
+  }
+
+  #countdown .controls {
+    gap: 4.2rem;
+  }
+}
+
+@media (max-width: 425px) {
+  body {
+    flex-direction: column;
+    gap: 6.4rem;
+  }
+
+  #countdown .timer {
+    font-size: 9.8rem;
+  }
+
+  #countdown .controls {
+    gap: 1.8rem;
+  }
+
+  #sounds button {
+    padding: 3.2rem;
+  }
+}
+
+/* THEME MODE */
+#theme-mode {
+  position: absolute;
+  top: 3.2rem;
+  right: 3.2rem;
+}
+
+.btn-light, .btn-dark {
+  background: none;
+  padding: 0;
+}
+
+body.light {
+  color: var(--light-primary-color);
+  background-color: var(--light-background);
+}
+
+body.dark {
+  color: var(--dark-primary-color);
+  background-color: var(--dark-background);
+}
+
+body.light button {
+  color: var(--light-secondary-color);
+}
+
+body.dark button {
+  color: var(--dark-secondary-color);
+  background-color: #29292E;
+}
+
+body.dark #theme-mode button {
+  background-color: transparent;
+}
+
+body.light button.selected svg path {
+  fill: #fff;
+}
+
+body.light button.selected {
+  background-color: var(--light-highlight-color);
+}
+
+body.dark button.selected svg path {
+  fill: #fff;
+}
+
+body.dark button.selected {
+  background-color: var(--dark-highlight-color);
+}
+
+body.dark button svg path {
+  fill: #C4C4CC;
+}
