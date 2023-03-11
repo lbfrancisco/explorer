@@ -1,0 +1,55 @@
+:root {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  background-image: url('./assets/fundo.svg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+
+  width: 100vw;
+  height: 100vh;
+} 
+
+.moles {
+  display: grid;
+  justify-content: center;
+  grid-template-areas: 'A A A A';
+  column-gap: 6.4rem;
+  margin-top: 23.2rem;
+}
+
+.mole {
+  width: 22.2rem;
+  height: 16.8rem;
+  background-image: url('./assets/toupeira6.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover 100%;
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+}
+
+.chosed {
+  animation: moleUp 350ms 1s backwards;
+}
+
+@keyframes moleUp {
+  0% { background-image: url('./assets/toupeira6.svg'); }
+  20% { background-image: url('./assets/toupeira1.svg'); }
+  40% { background-image: url('./assets/toupeira2.svg'); }
+  60% { background-image: url('./assets/toupeira3.svg'); }
+  80% { background-image: url('./assets/toupeira4.svg'); }
+  100% { background-image: url('./assets/toupeira5.svg'); }
+}
+
