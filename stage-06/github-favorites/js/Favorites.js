@@ -69,8 +69,6 @@ export class FavoritesView extends Favorites {
     input.value = '';
   }
 
-  
-
   update() {
     this.removeAllTr();
     this.users.forEach(user => {

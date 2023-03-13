@@ -1,0 +1,268 @@
+:root {
+  font-size: 62.5%;
+
+  --ff-primary: 'Roboto', sans-serif;
+  --ff-secondary: 'Roboto Mono', 'Roboto', sans-serif;
+  
+  --colors-text: #E1E1E6;
+  --colors-danger: #F75A68;
+  --colors-neutral: #FFFFFF;
+  --colors-placeholder: #7C7C8A;
+  --colors-no-content: #4E5455;
+
+  --colors-bg: #000000;
+  --colors-border: #4A808C;
+  --colors-btn-bg: #065E7C;
+  --colors-table-bg: #030B0D;
+  --colors-thead-bg: #092D38;
+  --colors-table-odd-bg: #06181C;
+}
+
+/* RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--colors-bg);
+}
+
+body * {
+  font-family: var(--ff-primary);
+  color: var(--colors-text);
+  font-size: 1.6rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.hide {
+  display: none;
+}
+
+/* APP */
+#app {
+  max-width: 112rem;
+  max-height: 100vh;
+  margin: 0 auto;
+  padding: 6.4rem 4.8rem;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4.8rem;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.search input {
+  width: clamp(29rem, 32rem + 1.5vw, 40rem);
+  background-color: var(--colors-table-bg);
+  color: var(--colors-text);
+
+  border-radius: .5rem;
+  padding: 1.6rem;
+  border: 0;
+}
+
+.search input:focus {
+  outline: 2px solid var(--colors-border);
+}
+
+.search input::placeholder {
+  color: var(--colors-placeholder);
+}
+
+.search button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .8rem;
+
+  text-transform: uppercase;
+  font-weight: bold;
+
+  background-color: var(--colors-btn-bg);
+  color: var(--colors-text);
+  padding: 1.2rem 3.2rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  
+  transition: all .3s linear;
+}
+
+.search button:hover {
+  background-color: var(--colors-neutral);
+  color: var(--colors-btn-bg);
+}
+
+.search button:hover svg path {
+  fill: var(--colors-btn-bg);
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  overflow: hidden;
+
+  border: 1px solid var(--colors-border);
+  border-collapse: separate;
+  border-radius: 1.2rem;
+  border-spacing: 0;
+}
+
+tbody.favorites {
+  width: 100%;
+  max-height: 45rem;
+  overflow: overlay;
+
+  display: flex;
+  flex-direction: column;
+}
+
+tr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+th, td {
+  width: 100%;
+}
+
+table thead th {
+  text-align: left;
+  padding: 1.6rem 2rem;
+}
+
+table tbody.favorites td {
+  padding: 2.4rem 2rem;
+}
+
+table thead tr {
+  background-color: var(--colors-thead-bg) !important;
+}
+
+tbody.favorites tr:nth-child(odd) {
+  border-top: 1px solid var(--colors-border);
+  border-bottom: 1px solid var(--colors-border);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--colors-table-odd-bg);
+}
+
+tr:nth-child(even) {
+  background-color: var(--colors-table-bg);
+}
+
+tbody.favorites::-webkit-scrollbar {
+  width: 1.4rem;
+}
+
+tbody.favorites::-webkit-scrollbar-thumb {
+  border: .4rem solid transparent;
+  background-color: var(--colors-border);
+  background-clip: padding-box;
+  border-radius: 1.2rem;
+}
+
+tbody.favorites::-webkit-scrollbar-track {
+  background-color: transparent;
+  padding: 1rem;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+}
+
+.user img {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+}
+
+.user a {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  text-decoration: none;
+}
+
+.user a span {
+  text-decoration: underline;
+}
+
+.user a:hover p,
+.user a:hover span {
+  color: var(--colors-border);
+}
+
+.user a p {
+  font-weight: bold;
+}
+
+.remove {
+  background-color: transparent;
+  color: var(--colors-danger);
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all .3s;
+}
+
+.remove:hover {
+  filter: opacity(.6);
+}
+
+/* TABLE - NO CONTENT */
+.no-content {
+  background-color: var(--colors-table-bg) !important;
+  height: 100%;
+  border: 0 !important;
+  overflow: hidden;
+}
+
+.no-content td {
+  padding: 0;
+}
+
+.no-content div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+
+  background-color: var(--colors-table-bg);
+  padding: 15rem;
+}
+
+.no-content div img {
+  width: 12rem;
+}
+
+.no-content div h2 {
+  font-family: var(--ff-secondary);
+  color: var(--colors-no-content);
+  font-size: 3.5rem;
+}
