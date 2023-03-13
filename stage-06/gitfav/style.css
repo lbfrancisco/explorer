@@ -150,11 +150,11 @@ th, td {
 
 table thead th {
   text-align: left;
-  padding: 1.6rem 2rem;
+  padding: 1.6rem 4rem;
 }
 
 table tbody.favorites td {
-  padding: 2.4rem 2rem;
+  padding: 2.4rem 4rem;
 }
 
 table thead tr {
