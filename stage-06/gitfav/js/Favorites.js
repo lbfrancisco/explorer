@@ -24,7 +24,7 @@ export class Favorites {
 
       const user = await GithubUser.search(entry);
 
-      if (!user) {
+      if (user.login === undefined) {
         throw new Error(
           "Usuário não encontrado, por favor, verifique o username."
         );
@@ -34,7 +34,7 @@ export class Favorites {
       this.update();
       this.save();
     } catch (error) {
-      console.log(error);
+     alert(error.message);
     }
   }
 
