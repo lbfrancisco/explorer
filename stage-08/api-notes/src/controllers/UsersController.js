@@ -6,6 +6,10 @@ class UsersController {
   async create (request, response) {
     const { name, email, password } = request.body;
 
+    if (password.length < 6) {
+      throw new AppError("A senha deve conter pelo menos 6 caracteres.");
+    }
+
     const database = await sqliteConnection();
     const checkIfEmailExists = await database.get(
       "SELECT * FROM users WHERE email = (?)", 
@@ -28,10 +32,10 @@ class UsersController {
 
   async update (request, response) {
     const { name, email, password, oldPassword } = request.body;
-    const { id } = request.params;
+    const user_id = request.user.id;
 
     const database = await sqliteConnection();
-    const user = await database.get("SELECT * FROM users WHERE id = (?)", [id]);
+    const user = await database.get("SELECT * FROM users WHERE id = (?)", [user_id]);
 
     if (!user) {
       throw new AppError("Usuário não encontrado!");
@@ -68,9 +72,19 @@ class UsersController {
       updated_at = DATETIME('now')
       
       WHERE id = ?`, 
-      [user.name, user.email, user.password, id]);
-    
-    response.json({});
+      [user.name, user.email, user.password, user_id]
+    );
+
+    const safeUser = {
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      created_at: user.created_at,
+      updated_at: user.updated_at,
+      avatar: user.avatar,
+    }
+
+    return response.json({ user: safeUser });
   }
 }
 
